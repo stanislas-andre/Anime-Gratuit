@@ -4,6 +4,7 @@
 <title>:: Anime-Gratuit.net - Le manga gratuit et libre ::</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="images/site/logo-small.png" rel="shortcut icon" />
 </head>
 
 <body>

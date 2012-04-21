@@ -1,4 +1,5 @@
 <?php
+
 class SqlStore {
 
 	private $connected;		// Boolean
@@ -26,4 +27,5 @@ class SqlStore {
 	public function getConnected() {
 		return $this->connected;
 	}
+
 }

@@ -1,10 +1,17 @@
 <?php
+
 class Episode {
 
 	private $number;
 	private $name;
 	private $link;
 
+	/**
+	* Instanciate an episode
+	* @param String $number
+	* @param String $link
+	* @param String $name
+	*/
 	public function __construct($number, $link, $name = null) {
 		$this->number = $number;
 		$this->link = $link;
@@ -39,7 +46,6 @@ class Episode {
 	public function setName($name) {
 		$this->name = $name;
 	}
-
 
 	public function setLink($link) {
 		$this->link = $link;

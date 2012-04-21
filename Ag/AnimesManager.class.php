@@ -1,11 +1,16 @@
 <?php
+
+require_once 'Anime.class.php';
+require_once 'SqlStore.class.php';
+require_once 'conf/config.conf.php';
+
 class AnimesManager {
 
 	private $animes;		// Array of Anime
 	private $sqlStore;		// SqlStore Object
 
 	public function __construct() {
-
+		$this->sqlStore = new SqlStore($conf['server'], $conf['login'], $conf['password'], $conf['database']);
 	}
 
 	/**

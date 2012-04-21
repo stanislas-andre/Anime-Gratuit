@@ -1,0 +1,80 @@
+body {
+	margin: auto;
+	width: 1000px;
+	margin-top: 20px;
+	background-color: black;
+	background-image: url('../images/site/background-page.png');
+	color: white;
+}
+
+#page {
+	width: 100%;
+	min-height: 1000px;
+	border: 1px solid #1B1C1C;
+	background-image: url('../images/site/background-wrapper.png');
+}
+
+#header {
+	width: 100%;
+	height: 200px;
+	background-image: url('../images/site/background-header.png');
+	background-repeat: no-repeat;
+	padding-bottom: 50px;
+}
+
+#menu {
+	float: left;
+	width: 230px;
+	padding-left: 10px;
+}
+
+#content {
+	float: left;
+	width: 700px;
+	padding-left: 30px;
+	margin-left: 10px;
+}
+
+#menu .form-rechercher {
+	padding-bottom: 20px;
+}
+
+#menu .form-rechercher input[type="text"] {
+	color: grey;
+	font-style: italic;
+}
+
+#content .article {
+	border: 1px solid #2A2D2C;
+}
+
+#content .article .titre {
+	background-image: url('../images/site/background-titre.png');
+	padding-left: 5px;
+	font-weight: bold;
+}
+
+#content .article .contenu {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: 1px solid #2A2D2C;
+}
+
+#content .article .contenu .image-contenu {
+	float: left;
+	width: 240px;
+}
+
+#content .article .contenu .info-contenu {
+	min-height:175px;
+}
+
+#content .article img {
+	margin-left: 5px;
+	border: 5px solid #2A2D2C;
+}
+
+#footer {
+	text-align: center;
+	width: 100%;
+}

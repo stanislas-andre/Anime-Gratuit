@@ -20,9 +20,14 @@ class Anime {
 		$this->type = $type;
 	}
 
+	/**
+	* Save the current Article object from the database
+	*/
 	public function save() {
 		// TODO: voir le système de persistence des données.
 	}
+
+	/* --- Getters and setters --- */
 
 	public function getId() {
 		return $this->id;

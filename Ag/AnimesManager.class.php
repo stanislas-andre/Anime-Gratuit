@@ -1,4 +1,9 @@
 <?php
+
+require_once 'Anime.class.php';
+require_once 'SqlStore.class.php';
+require_once 'conf/config.conf.php';
+
 class AnimesManager {
 
 	private $animes;		// Array of Anime

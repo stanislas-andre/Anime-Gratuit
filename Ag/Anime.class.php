@@ -1,5 +1,9 @@
 <?php
+
+require_once 'Episode.class.php';
+
 class Anime {
+	
 	private $id;				// String
 	private $title;				// String
 	private $year;				// String
@@ -7,8 +11,8 @@ class Anime {
 	private $synopsis;			// String
 	private $photoName;			// String
 	private $type;				// String
-	private $epHttpList;		// List of HttpEpisode
-	private $epTorrentList;		// List of TorrentEpisode
+	private $epHttpList;		// List of Episode
+	private $epTorrentList;		// List of Episode
 
 	public function __construct($title, $year, $author, $synopsis, $photoName, $type) {
 		$this->id = uniqid();
@@ -25,6 +29,16 @@ class Anime {
 	*/
 	public function save() {
 		// TODO: voir le système de persistence des données.
+	}
+
+	/**
+	* Create a new episode Add an episode from the List
+	* @param String $number
+	* @param String $link
+	* @param String $name
+	*/
+	public function addEpisode($number, $link, $name = null) {
+		$episode = new Episode($number, $link, $name);
 	}
 
 	/* --- Getters and setters --- */

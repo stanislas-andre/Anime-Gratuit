@@ -4,7 +4,7 @@ class SqlStore {
 
 	private $connected;		// Boolean
 
-	public function __construct($login, $password, $server, $database) {
+	public function __construct($server, $login, $password, $database) {
 		if (mysql_connect($server, $login, $password)) {
 			if (mysql_select_db($database)) {
 				$this->connected = true;
@@ -13,11 +13,11 @@ class SqlStore {
 	}
 
 	/**
-	* Make a query without result
+	* Make a query
 	* @param String $query
 	*/
 	public function query($query) {
-		mysql_query($query);
+		return mysql_query($query);
 	}
 
 	/**

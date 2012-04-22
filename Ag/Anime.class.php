@@ -3,7 +3,7 @@
 require_once 'Episode.class.php';
 
 class Anime {
-	
+
 	private $id;				// String
 	private $title;				// String
 	private $year;				// String
@@ -14,8 +14,8 @@ class Anime {
 	private $epHttpList;		// List of Episode
 	private $epTorrentList;		// List of Episode
 
-	public function __construct($title, $year, $author, $synopsis, $photoName, $type) {
-		$this->id = uniqid();
+	public function __construct($id, $title, $year, $author, $synopsis, $photoName, $type) {
+		$this->id = $id;
 		$this->title = $title;
 		$this->year = $year;
 		$this->author = $author;
@@ -25,10 +25,15 @@ class Anime {
 	}
 
 	/**
-	* Save the current Article object from the database
+	* Save the current Article object from the database (tested and works)
 	*/
 	public function save() {
-		// TODO: voir le système de persistence des données.
+		require 'conf/config.conf.php';
+		$sqlStore = new SqlStore($conf['server'], $conf['login'], $conf['password'], $conf['database']);
+		if ($sqlStore->getConnected()) {
+			$sqlStore->query('INSERT INTO anime VALUES("' . $this->id . '", "' . $this->title .'", "' . $this->year . '", "' . $this->author . '", 
+			"' . $this->synopsis . '", "' .$this->photoName . '", "' . $this->type . '")');
+		}
 	}
 
 	/**

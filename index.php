@@ -1,8 +1,24 @@
+<?php
+require_once 'Ag/AnimesManager.class.php';
+$ag = new AnimesManager();
+
+if (!empty($_POST['title'])) {
+	if ($ag->getAnAnimeByTitle($_POST['title']) != null) {
+		$content = $ag->renderAnime($ag->getAnAnimeByTitle($_POST['title']));
+	} else {
+		$content = 'Votre recherche ne comporte aucun r&eacute;sultat.';
+	}
+} else {
+	$content = $ag->renderAnimes();
+}
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>:: Anime-Gratuit.net - Le manga gratuit et libre ::</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="images/site/logo-small.png" rel="shortcut icon" />
 </head>
@@ -26,23 +42,14 @@
 		</div>
 
 		<div id="content">
-
-			<div class="article">
-				<div class="titre">Area No Kishi</div>
-				<div class="contenu">
-					<div class="image-contenu">
-						<img src="images/animes/Area-no-Kishi.jpg" alt="Area No Kishi" />
-					</div>
-					<div class="info-contenu">
-						Kakeru Aizawa, un jeune prodige du football, int&egrave;gre l'&eacute;quipe de son fr&egrave;re Suguru, capitaine de l'&eacute;quipe de son &eacute;cole.
-					</div>
-				</div>
-			</div>
+			<?php
+			echo stripslashes($content);
+			?>
 		</div>
 
 		<div id="footer">
-			Terms
 		</div>
+
 	</div>
 </body>
 </html>

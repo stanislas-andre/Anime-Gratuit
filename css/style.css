@@ -66,7 +66,9 @@ body {
 }
 
 #content .article .contenu .info-contenu {
-	min-height:175px;
+	margin-left: 245px;
+	margin-right: 5px;
+	min-height: 175px;
 }
 
 #content .article img {

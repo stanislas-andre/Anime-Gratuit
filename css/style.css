@@ -8,6 +8,10 @@ body {
 	color: white;
 }
 
+img {
+	border: none;
+}
+
 a {
 	color: white;
 	text-decoration: none;

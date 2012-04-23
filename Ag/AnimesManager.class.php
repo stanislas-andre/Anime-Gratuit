@@ -99,6 +99,10 @@ class AnimesManager {
 		$anime->save();
 	}
 
+	public function dropAnime($anime) {
+		$this->sqlStore->query("DELETE FROM anime WHERE id = '$anime->getId()'");
+	}
+
 	public function getSqlStore() {
 		return $this->sqlStore;
 	}

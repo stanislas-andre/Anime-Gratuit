@@ -44,12 +44,12 @@ a {
 }
 
 input[type="text"] {
-	color: grey;
+	color: #CCCCCC;
 	font-style: italic;
 }
 
 textarea {
-	color: grey;
+	color: #CCCCCC;
 	font-style: italic;
 }
 

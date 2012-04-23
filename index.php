@@ -14,18 +14,7 @@ include 'includes/addAnime.inc.php';
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="images/site/logo-small.png" rel="shortcut icon" />
-
-<script type="text/javascript">
-	function displayAnimeForm() {
-		document.getElementById('animeForm').style.display ='block';
-		document.getElementById('ajouterAnime').style.display ='none';
-	}
-
-	function hideAnimeForm() {
-		document.getElementById('animeForm').style.display = 'none';
-		document.getElementById('ajouterAnime').style.display = 'block';
-	}
-</script>
+<script type="text/javascript" src="javascript.js"></script> 
 
 </head>
 
@@ -59,12 +48,14 @@ include 'includes/addAnime.inc.php';
 					<textarea name="synopsis" onclick="this.value=''" cols="70" rows="5">Synopsis...</textarea><br /><br />
 					<input type="file" name="avatar" size="70" /><br /><br />
 					<input type="text" name="type" value="Genre" onclick="this.value=''" size="100" /><br /><br />
-					<input type="submit" value="Ajouter" /> <input type="submit" onclick="hideAnimeForm()" value="Annuler" />
+					<input type="submit" value="Ajouter" /> <input type="button" onclick="hideAnimeForm()" value="Annuler" />
 				</form>
 			</div>
 		</div>
 
 		<div id="footer">
+			<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+			<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" /></a></p>
 		</div>
 
 	</div>

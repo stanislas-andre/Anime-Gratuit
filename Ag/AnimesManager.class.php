@@ -11,7 +11,7 @@ class AnimesManager {
 	public function __construct() {
 		require 'conf/config.conf.php';
 		$this->sqlStore = new SqlStore($conf['server'], $conf['login'], $conf['password'], $conf['database']);
-		$query = $this->sqlStore->query("SELECT * FROM anime");
+		$query = $this->sqlStore->query("SELECT * FROM anime ORDER BY title");
 		while ($result = mysql_fetch_array($query)) {
 			$this->animes[] = new Anime($result['id'], $result['title'], $result['year'], $result['author'], $result['synopsis'], $result['photoName'], $result['type']);
 		}
@@ -97,6 +97,10 @@ class AnimesManager {
 	public function createAnime($title, $year, $author, $synopsis, $photoName, $type) {
 		$anime = new Anime(uniqid(), $title, $year, $author, $synopsis, $photoName, $type);
 		$anime->save();
+	}
+
+	public function getSqlStore() {
+		return $this->sqlStore;
 	}
 
 }

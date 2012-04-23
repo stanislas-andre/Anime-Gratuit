@@ -2,15 +2,8 @@
 require_once 'Ag/AnimesManager.class.php';
 $ag = new AnimesManager();
 
-if (!empty($_POST['title'])) {
-	if ($ag->getAnAnimeByTitle($_POST['title']) != null) {
-		$content = $ag->renderAnime($ag->getAnAnimeByTitle($_POST['title']));
-	} else {
-		$content = 'Votre recherche ne comporte aucun r&eacute;sultat.';
-	}
-} else {
-	$content = $ag->renderAnimes();
-}
+include 'includes/searchbar.inc.php';
+include 'includes/addAnime.inc.php';
 
 ?>
 
@@ -21,6 +14,19 @@ if (!empty($_POST['title'])) {
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="images/site/logo-small.png" rel="shortcut icon" />
+
+<script type="text/javascript">
+	function displayAnimeForm() {
+		document.getElementById('animeForm').style.display ='block';
+		document.getElementById('ajouterAnime').style.display ='none';
+	}
+
+	function hideAnimeForm() {
+		document.getElementById('animeForm').style.display = 'none';
+		document.getElementById('ajouterAnime').style.display = 'block';
+	}
+</script>
+
 </head>
 
 <body>
@@ -31,7 +37,7 @@ if (!empty($_POST['title'])) {
 		<div id="menu">
 			<div class="form-rechercher">
 				<img src="images/site/menu-rechercher.png" alt="rechercher" />
-				<form method="post" action="#">
+				<form method="get" action="#">
 					<input type="text" name="title" value="Rechercher..." onclick="this.value='';" />
 					<input type="submit" value="Go !" />
 				</form>
@@ -42,9 +48,20 @@ if (!empty($_POST['title'])) {
 		</div>
 
 		<div id="content">
-			<?php
-			echo stripslashes($content);
-			?>
+			<?php echo stripslashes($content); ?>
+			<br />
+			<a title="Ajouter un anime" href="javascript:displayAnimeForm()" id="ajouterAnime">Ajouter un anime</a>
+			<div id="animeForm">
+				<form method="post" action="#" enctype="multipart/form-data">
+					<input type="text" name="title" value="Titre de l'anime" onclick="this.value =''" size="100" /><br /><br />
+					<input type="text" name="year" value="Ann&eacute;e de l'anime" onclick="this.value =''" size="100" /><br /><br />
+					<input type="text" name="author" value="Auteur de l'anime" onclick="this.value =''" size="100" /><br /><br />
+					<textarea name="synopsis" onclick="this.value=''" cols="70" rows="5">Synopsis...</textarea><br /><br />
+					<input type="file" name="avatar" size="70" /><br /><br />
+					<input type="text" name="type" value="Genre" onclick="this.value=''" size="100" /><br /><br />
+					<input type="submit" value="Ajouter" /> <input type="submit" onclick="hideAnimeForm()" value="Annuler" />
+				</form>
+			</div>
 		</div>
 
 		<div id="footer">

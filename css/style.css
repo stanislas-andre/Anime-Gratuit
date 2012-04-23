@@ -2,14 +2,19 @@ body {
 	margin: auto;
 	width: 1000px;
 	margin-top: 20px;
+	margin-bottom: 20px;
 	background-color: black;
 	background-image: url('../images/site/background-page.png');
 	color: white;
 }
 
+a {
+	color: white;
+	text-decoration: none;
+}
+
 #page {
 	width: 100%;
-	min-height: 1000px;
 	border: 1px solid #1B1C1C;
 	background-image: url('../images/site/background-wrapper.png');
 }
@@ -29,17 +34,21 @@ body {
 }
 
 #content {
-	float: left;
 	width: 700px;
 	padding-left: 30px;
-	margin-left: 10px;
+	margin-left: 250px;
 }
 
 #menu .form-rechercher {
 	padding-bottom: 20px;
 }
 
-#menu .form-rechercher input[type="text"] {
+input[type="text"] {
+	color: grey;
+	font-style: italic;
+}
+
+textarea {
 	color: grey;
 	font-style: italic;
 }
@@ -77,7 +86,12 @@ body {
 	border: 5px solid #2A2D2C;
 }
 
+#content #animeForm {
+	display: none;
+}
+
 #footer {
 	text-align: center;
 	width: 100%;
+	margin-bottom: 20px;
 }

@@ -1,4 +1,3 @@
-test
 <?php
 require_once 'Ag/AnimesManager.class.php';
 $ag = new AnimesManager();

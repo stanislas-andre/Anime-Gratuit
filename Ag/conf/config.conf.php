@@ -2,7 +2,7 @@
 
 $conf = array(
 	/* SQL CONFIG */
-	'server' => 'localhost',
+	'server' => 'stanislas-andre.fr',
 	'login' => 'anime-gratuit',
 	'password' => 'anime-gratuit',
 	'database' => 'anime-gratuit',

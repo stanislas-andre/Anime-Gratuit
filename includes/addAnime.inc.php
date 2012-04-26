@@ -20,7 +20,7 @@ if (!empty($_POST['title']) && !empty($_POST['year']) && !empty($_POST['author']
 		     $error = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg.';
 		}
 		if($size > $sizemax) {
-		     $erreur = 'Le fichier est trop lourd...';
+		     $error = 'Le fichier est trop lourd...';
 		}
 		if(!isset($error)) {
 		     $file = strtr($file, 
@@ -29,7 +29,10 @@ if (!empty($_POST['title']) && !empty($_POST['year']) && !empty($_POST['author']
 		     $file = preg_replace('/([^.a-z0-9]+)/i', '-', $file);
 		     move_uploaded_file($_FILES['avatar']['tmp_name'], $dir . $file);
 		}
+		// Que se passe-t-il s'il y a une erreur au dessus ?
 
 		$ag->createAnime($title, $year, $author, $synopsis, $file, $type);
+		// Pas de redirect ?
+		// S'il est inclu & que je fais F5 ?
 	}
 }
